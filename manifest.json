@@ -1,7 +1,7 @@
 {
-  "name": "my-new-pwa",
-  "short_name": "my-new-pwa",
-  "start_url": "https://dev.localhost:3001/",
+  "name": "My Pokedex",
+  "short_name": "My Pokedex",
+  "start_url": "https://kunal-preet.github.io/INFO-6128-Kunal_Preet-Poke-dex-Lab/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
