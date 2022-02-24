@@ -35,7 +35,8 @@ document.addEventListener('init', (e) => {
         const list = document.querySelector('#pokemon-list');
         newPokemon.forEach(name => {
           list.appendChild(ons.createElement(`
-            <ons-list-item modifier="chevron" tappable tap-background-color= "#f69273" background-color="#a79ecb" id="pokeStats" onclick="changePage('pokeStats.html', ${pokeNumber} )">
+          
+            <ons-list-item modifier="chevron" tappable tap-background-color= "#f69273"  id="pokeStats" onclick="changePage('pokeStats.html', ${pokeNumber} )">
               ${name} 
 
             </ons-list-item>
@@ -46,9 +47,6 @@ document.addEventListener('init', (e) => {
   
         url = json.next;
 
-        if (!url) {
-          document.querySelector('#after-list').style.display = 'none';
-        }
       };
   
       get();
@@ -91,9 +89,6 @@ document.addEventListener('init', (e) => {
                 </ons-list-item>
               `));           
     
-            if (!url) {
-              document.querySelector('#after-list').style.display = 'none';
-            }
           };
       
           get();
