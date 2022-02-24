@@ -30,7 +30,7 @@ let elements = {
               </div>
             </ons-list-item>
           `));
-          () => changePage('empty.html')
+          
           nextPokenumber++;
         });
   
