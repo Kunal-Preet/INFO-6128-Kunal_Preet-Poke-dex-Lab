@@ -6,7 +6,7 @@ const savePokemon = (pokenumber, button) => {
   document.addEventListener('init', ({ target }) => {
     if (target.matches('#pokeball')) {
   
-      let url = 'https://pokeapi.co/api/v2/pokemon';
+      let url = 'https://pokeapi.co/api/v2/pokemon?limit=100';
       let nextPokenumber = 1; // use to keep track of the Pokémon numbers
   
       const get = async () => {
@@ -19,7 +19,7 @@ const savePokemon = (pokenumber, button) => {
         const list = document.querySelector('#pokemon-list');
         newPokemon.forEach(name => {
           list.appendChild(ons.createElement(`
-            <ons-list-item expandable>
+            <ons-list-item modifier="chevron" tappable>
               ${nextPokenumber} ${name}
               <div class="expandable-content">
                 <ons-button onclick="savePokemon(${nextPokenumber}, this)">Save</ons-button>
