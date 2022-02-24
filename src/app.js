@@ -23,14 +23,14 @@ let elements = {
         const list = document.querySelector('#pokemon-list');
         newPokemon.forEach(name => {
           list.appendChild(ons.createElement(`
-            <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="fn.load('pokeStats.html')" >
+            <ons-list-item modifier="chevron" tappable id="pokeStats" onclick = ()=>changePage'pokeStats.html')" >
               ${nextPokenumber} ${name}
               <div class="expandable-content">
                 <ons-button onclick="savePokemon(${nextPokenumber}, this)">Save</ons-button>
               </div>
             </ons-list-item>
           `));
-       
+          () => changePage('empty.html')
           nextPokenumber++;
         });
   
