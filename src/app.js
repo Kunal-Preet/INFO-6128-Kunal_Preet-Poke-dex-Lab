@@ -7,7 +7,10 @@ let elements = {
 const state={
     sprites: null,
     name:null,
-    pokeUrl: null
+    pokeUrl: null,
+    types: null,
+    stats:null,
+    moves:null
 }
 const changePage = (page, data) => {
     elements.navigator.pushPage(page, { data });
@@ -32,8 +35,8 @@ document.addEventListener('init', (e) => {
         const list = document.querySelector('#pokemon-list');
         newPokemon.forEach(name => {
           list.appendChild(ons.createElement(`
-            <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="changePage('pokeStats.html', ${pokeNumber} )">
-              ${name}
+            <ons-list-item modifier="chevron" tappable tap-background-color= "#f69273" id="pokeStats" onclick="changePage('pokeStats.html', ${pokeNumber} )">
+              ${name} 
 
             </ons-list-item>
           `));
@@ -69,20 +72,25 @@ document.addEventListener('init', (e) => {
 
             
               stats.appendChild(ons.createElement(`
-                <ons-list-item>
-                ${sprites}
+                <ons-list-item >
+                ${state.sprites}
                 </ons-list-item>
               `));
               stats.appendChild(ons.createElement(`
                 <ons-list-item>
-                ${types}
+                ${state.name}
                 </ons-list-item>
               `));
-              
-              
-            
-      
-            
+              stats.appendChild(ons.createElement(`
+                <ons-list-item>
+                ${state.stats}
+                </ons-list-item>
+              `));
+              stats.appendChild(ons.createElement(`
+                <ons-list-item>
+                ${state.moves}
+                </ons-list-item>
+              `));           
     
             if (!url) {
               document.querySelector('#after-list').style.display = 'none';
