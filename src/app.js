@@ -21,11 +21,11 @@ const changePage = (page, data) => {
 document.addEventListener('init', (e) => {
         if (e.target.id === 'pokeball') {
       let url = 'https://pokeapi.co/api/v2/pokemon?limit=100';
-      let pokeNumber = 1; // use to keep track of the Pokémon numbers
+      let pokeNumber = 1; 
       elements = {
         navigator: document.querySelector('#navigator')}
       const get = async () => {
-        // do the API call and get JSON response
+    
         const response = await fetch(url);
         const json = await response.json();
   
@@ -67,17 +67,18 @@ document.addEventListener('init', (e) => {
             const stats = document.querySelector('#pokemon-stats');
             const pokeName = document.getElementById('pokeName');
             pokeName.textContent=state.name;
-                       
-              stats.appendChild(ons.createElement(`
-                <ons-list-item >
-                ${state.sprites}
-                </ons-list-item>
-              `));
+               
               stats.appendChild(ons.createElement(`
                 <ons-list-item>
                 ${state.name}
                 </ons-list-item>
               `));
+              stats.appendChild(ons.createElement(`
+                <ons-list-item >
+                ${state.sprites}
+                </ons-list-item>
+              `));
+              
               stats.appendChild(ons.createElement(`
                 <ons-list-item>
                 ${state.stats}
