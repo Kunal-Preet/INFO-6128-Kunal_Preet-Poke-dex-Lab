@@ -41,13 +41,13 @@ const savePokemon = (pokenumber, button) => {
       get();
   
       // at the bottom of the list get the next set of results and append them
-      target.onInfiniteScroll = (done) => {
-        if (url) {
-          setTimeout(() => {
-            get();
-            done();
-          }, 200);
-        }
-      };
+     // target.onInfiniteScroll = (done) => {
+      //  if (url) {
+      //    setTimeout(() => {
+      //      get();
+      //      done();
+      //    }, 200);
+      //  }
+      //};
     }
   });
