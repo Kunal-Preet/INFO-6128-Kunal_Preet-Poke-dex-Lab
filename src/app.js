@@ -70,7 +70,12 @@ document.addEventListener('init', (e) => {
             
               stats.appendChild(ons.createElement(`
                 <ons-list-item>
-                JSON.stringify(${state.sprites})
+                ${sprites}
+                </ons-list-item>
+              `));
+              stats.appendChild(ons.createElement(`
+                <ons-list-item>
+                ${types}
                 </ons-list-item>
               `));
               
