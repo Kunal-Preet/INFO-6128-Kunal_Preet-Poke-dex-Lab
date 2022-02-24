@@ -6,7 +6,7 @@ const savePokemon = (pokenumber, button) => {
 let elements = {
     pokeStats: null
 }
-var navigator = document.getElementById('navigator');
+
   
   document.addEventListener('init', ({ target }) => {
     if (target.matches('#pokeball')) {
@@ -20,12 +20,16 @@ var navigator = document.getElementById('navigator');
         const json = await response.json();
   
         const newPokemon = json.results.map(e => e.name);
+        var navigator = document.querySelector('#navigator');
   
         const list = document.querySelector('#pokemon-list');
         newPokemon.forEach(name => {
           list.appendChild(ons.createElement(`
             <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="navigator.pushPage('pokeStats.html') >
               ${nextPokenumber} ${name}
+              <div class="expandable-content">
+                <ons-button onclick="savePokemon(${nextPokenumber}, this)">Save</ons-button>
+              </div>
             </ons-list-item>
           `));
           
