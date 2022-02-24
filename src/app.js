@@ -62,18 +62,19 @@ document.addEventListener('init', (e) => {
             state.stats= jsonResponse.stats;
             state.moves= jsonResponse.moves;
       
-            const newPokemon = jsonResponse.results.map(e => e.child);
-      
             const stats = document.querySelector('#pokemon-stats');
-            newPokemon.forEach(child => {
+            const pokeName = document.getElementById('pokeName');
+            pokeName.textContent=jsonResponse.name;
+            
+            
               stats.appendChild(ons.createElement(`
                 <ons-list-item>
-                   ${child}
+                jsonResponse.sprites
                 </ons-list-item>
               `));
               
-              nextPokenumber++;
-            });
+              
+            
       
             url = json.next;
     
