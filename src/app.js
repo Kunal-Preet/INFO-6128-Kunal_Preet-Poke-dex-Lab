@@ -1,12 +1,4 @@
-const savePokemon = (pokenumber, button) => {
-    addPokemonToGrid(pokenumber);
-    button.parentNode.parentNode.hideExpansion();
-    //elements.pokeStats.addEventListener('click', () => changePage('pokeStats.html'));
-  };
-
-const redirect = () =>{
-   // window.location("pokeStats.html");
-}  
+ 
 let elements = {
     pokeStats: null,
     navigator: null
@@ -33,9 +25,6 @@ document.addEventListener('init', (e) => {
           list.appendChild(ons.createElement(`
             <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="changePage('pokeStats.html')">
               ${nextPokenumber} ${name}
-              <div class="expandable-content">
-                <ons-button onclick="savePokemon(${nextPokenumber}, this)">Save</ons-button>
-              </div>
             </ons-list-item>
           `));
           
