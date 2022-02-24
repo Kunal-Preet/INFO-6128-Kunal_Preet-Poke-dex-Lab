@@ -54,6 +54,7 @@ document.addEventListener('init', (e) => {
         const get = async () => {
             const response = await fetch(url);
             const jsonResponse = await response.json();
+            console.log(jsonResponse);
             state.sprites= jsonResponse.sprites;
             state.name= jsonResponse.name;
             state.types= jsonResponse.types;
