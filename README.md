@@ -1,2 +1,2 @@
-# pwa-boilerplate
-Basic vanilla PWA boilerplate repository
+# pokedex lab
+By- Kunal Preet
