@@ -1,7 +1,12 @@
  
 let elements = {
     pokeStats: null,
-    navigator: null
+    navigator: null,
+
+}
+const state={
+    sprites: null,
+    pokeUrl: null
 }
 const changePage = (page, data) => {
     elements.navigator.pushPage(page, { data });
@@ -17,14 +22,17 @@ document.addEventListener('init', (e) => {
         // do the API call and get JSON response
         const response = await fetch(url);
         const json = await response.json();
+        state.pokeUrl = json.url;
   
         const newPokemon = json.results.map(e => e.name);
+    
   
         const list = document.querySelector('#pokemon-list');
         newPokemon.forEach(name => {
           list.appendChild(ons.createElement(`
             <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="changePage('pokeStats.html')">
-              ${nextPokenumber} ${name}
+              ${name}
+
             </ons-list-item>
           `));
           
@@ -32,24 +40,47 @@ document.addEventListener('init', (e) => {
         });
   
         url = json.next;
-  
-        // hide the spinner when all the pages have been loaded
+
         if (!url) {
           document.querySelector('#after-list').style.display = 'none';
         }
       };
   
-      // get the first set of results as soon as the page is initialised
       get();
-  
-      // at the bottom of the list get the next set of results and append them
-     // target.onInfiniteScroll = (done) => {
-      //  if (url) {
-      //    setTimeout(() => {
-      //      get();
-      //      done();
-      //    }, 200);
-      //  }
-      //};
     }
+    if (e.target.id === "stats") {
+        let url = 'https://pokeapi.co/api/v2/pokemon/1/';
+
+        const get = async () => {
+            const response = await fetch(url);
+            const jsonResponse = await response.json();
+            state.sprites= jsonResponse.sprites;
+            state.name= jsonResponse.name;
+            state.types= jsonResponse.types;
+            state.stats= jsonResponse.stats;
+            state.moves= jsonResponse.moves;
+      
+            const newPokemon = json.results.map(e => e.name);
+      
+            const stats = document.querySelector('#pokemon-stats');
+            newPokemon.forEach(child => {
+              stats.appendChild(ons.createElement(`
+                <ons-list-item>
+                   ${child}
+                </ons-list-item>
+              `));
+              
+              nextPokenumber++;
+            });
+      
+            url = json.next;
+    
+            if (!url) {
+              document.querySelector('#after-list').style.display = 'none';
+            }
+          };
+      
+          get();
+        }
+      
   });
