@@ -5,7 +5,7 @@ const savePokemon = (pokenumber, button) => {
   };
 
 const redirect = () =>{
-    changePage('pokeStats.html')
+    window.location("pokeStats.html");
 }  
 let elements = {
     pokeStats: null
