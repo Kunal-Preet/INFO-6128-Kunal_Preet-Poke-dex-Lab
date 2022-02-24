@@ -4,7 +4,7 @@ const savePokemon = (pokenumber, button) => {
   };
   
   document.addEventListener('init', ({ target }) => {
-    if (target.matches('#pokemon')) {
+    if (target.matches('#pokeball')) {
   
       let url = 'https://pokeapi.co/api/v2/pokemon';
       let nextPokenumber = 1; // use to keep track of the Pokémon numbers
