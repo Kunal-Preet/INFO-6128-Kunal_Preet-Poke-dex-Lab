@@ -26,9 +26,6 @@ var navigator = document.getElementById('navigator');
           list.appendChild(ons.createElement(`
             <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="navigator.pushPage('pokeStats.html') >
               ${nextPokenumber} ${name}
-              <div class="expandable-content">
-                <ons-button onclick="savePokemon(${nextPokenumber}, this)">Save</ons-button>
-              </div>
             </ons-list-item>
           `));
           
