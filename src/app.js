@@ -6,6 +6,7 @@ let elements = {
 }
 const state={
     sprites: null,
+    name:null,
     pokeUrl: null
 }
 const changePage = (page, data) => {
@@ -64,12 +65,12 @@ document.addEventListener('init', (e) => {
       
             const stats = document.querySelector('#pokemon-stats');
             const pokeName = document.getElementById('pokeName');
-            pokeName.textContent=jsonResponse.name;
+            pokeName.textContent=state.name;
 
             
               stats.appendChild(ons.createElement(`
                 <ons-list-item>
-                ${jsonResponse.sprites}
+                ${state.sprites}
                 </ons-list-item>
               `));
               
