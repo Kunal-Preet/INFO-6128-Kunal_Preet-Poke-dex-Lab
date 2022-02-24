@@ -11,7 +11,7 @@ const get = async () => {
   const list = document.querySelector('#pokemon-list');
   newPokemon.forEach(name => {
     list.appendChild(ons.createElement(`
-      <ons-list-item modifier="chevron" tappable expandable >
+      <ons-list-item expandable >
         ${nextPokenumber} ${name}
         <div class="expandable-content">
           <ons-button onclick="savePokemon(${nextPokenumber}, this)">Save</ons-button>
