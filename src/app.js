@@ -29,11 +29,11 @@ document.addEventListener('init', (e) => {
         const response = await fetch(url);
         const json = await response.json();
   
-        const newPokemon = json.results.map(e => e.name);
+        const pokemon = json.results.map(e => e.name);
     
   
         const list = document.querySelector('#pokemon-list');
-        newPokemon.forEach(name => {
+        pokemon.forEach(name => {
           list.appendChild(ons.createElement(`
           
             <ons-list-item modifier="chevron" tappable tap-background-color= "#f69273"  id="pokeStats" onclick="changePage('pokeStats.html', ${pokeNumber} )">
