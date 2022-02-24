@@ -60,7 +60,7 @@ document.addEventListener('init', (e) => {
             state.stats= jsonResponse.stats;
             state.moves= jsonResponse.moves;
       
-            const newPokemon = json.results.map(e => e.name);
+            const newPokemon = jsonResponse.results.map(e => e.name);
       
             const stats = document.querySelector('#pokemon-stats');
             newPokemon.forEach(child => {
