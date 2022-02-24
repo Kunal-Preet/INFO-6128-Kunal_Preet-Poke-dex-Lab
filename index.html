@@ -23,9 +23,22 @@
           <ons-toolbar>
             <div class="center">My Pokedex</div>
           </ons-toolbar>
+          <ons-list id="pokemon-list">
+          </ons-list>
+            
+          
         </ons-page>
       </template>
   </body>
+
+  <template id="empty.html">
+    <ons-page id="empty">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">Empty Page</div>
+      </ons-toolbar>
+    </ons-page>
+  </template>
 
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <script src="src/app.js"></script>
