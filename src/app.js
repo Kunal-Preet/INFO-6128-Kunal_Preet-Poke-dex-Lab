@@ -69,13 +69,15 @@ document.addEventListener('init', (e) => {
             const stats = document.querySelector('#pokemon-stats');
             const pokeName = document.getElementById('pokeName');
             pokeName.textContent=state.name;
-
+            const spritesVal = jsonResponse.results.map(e => e.sprites);
+            spritesVal.forEach(sprites => {
             
               stats.appendChild(ons.createElement(`
                 <ons-list-item >
-                ${state.sprites}
+                ${sprites}
                 </ons-list-item>
               `));
+            });
               stats.appendChild(ons.createElement(`
                 <ons-list-item>
                 ${state.name}
