@@ -3,10 +3,13 @@ const savePokemon = (pokenumber, button) => {
     button.parentNode.parentNode.hideExpansion();
     //elements.pokeStats.addEventListener('click', () => changePage('pokeStats.html'));
   };
+
+const redirect = () =>{
+    changePage('pokeStats.html')
+}  
 let elements = {
     pokeStats: null
 }
-
   
   document.addEventListener('init', ({ target }) => {
     if (target.matches('#pokeball')) {
@@ -20,12 +23,11 @@ let elements = {
         const json = await response.json();
   
         const newPokemon = json.results.map(e => e.name);
-        var navigator = document.querySelector('#navigator');
   
         const list = document.querySelector('#pokemon-list');
         newPokemon.forEach(name => {
           list.appendChild(ons.createElement(`
-            <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="navigator.pushPage('pokeStats.html') >
+            <ons-list-item modifier="chevron" tappable id="pokeStats" onClick = "redirect()" >
               ${nextPokenumber} ${name}
               <div class="expandable-content">
                 <ons-button onclick="savePokemon(${nextPokenumber}, this)">Save</ons-button>
