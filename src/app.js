@@ -10,6 +10,8 @@ const state={
 }
 const changePage = (page, data) => {
     elements.navigator.pushPage(page, { data });
+    pokeUrl=data;
+    console.log(pokeUrl);
   }
 
 document.addEventListener('init', (e) => {
@@ -30,7 +32,7 @@ document.addEventListener('init', (e) => {
         const list = document.querySelector('#pokemon-list');
         newPokemon.forEach(name => {
           list.appendChild(ons.createElement(`
-            <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="changePage('pokeStats.html')">
+            <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="changePage('pokeStats.html',pokeUrl)">
               ${name}
 
             </ons-list-item>
