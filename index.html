@@ -17,12 +17,17 @@
   </head>
 
   <body>
-    <div class="container">
-      <h1>You are Online!</h1>
-      <p>It's time to create an amazing Progressive Web App!</p>
-    </div>
+    <ons-navigator id="navigator" swipeable page="index.html"></ons-navigator>
+      <template id="index.html">
+        <ons-page id="pokeball">
+          <ons-toolbar>
+            <div class="center">My Pokedex</div>
+          </ons-toolbar>
+        </ons-page>
+      </template>
   </body>
 
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <script src="src/app.js"></script>
 
   <script type="text/javascript">
@@ -38,5 +43,5 @@
     };
     registerSW();
   </script>
-  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  
 </html>
