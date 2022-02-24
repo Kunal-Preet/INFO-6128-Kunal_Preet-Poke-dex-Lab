@@ -76,7 +76,7 @@ document.addEventListener('init', (e) => {
               
             
       
-            url = json.next;
+            
     
             if (!url) {
               document.querySelector('#after-list').style.display = 'none';
