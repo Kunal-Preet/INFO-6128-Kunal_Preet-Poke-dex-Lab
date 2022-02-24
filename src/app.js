@@ -24,7 +24,6 @@ document.addEventListener('init', (e) => {
         // do the API call and get JSON response
         const response = await fetch(url);
         const json = await response.json();
-        state.pokeUrl = json.url;
   
         const newPokemon = json.results.map(e => e.name);
     
@@ -32,7 +31,7 @@ document.addEventListener('init', (e) => {
         const list = document.querySelector('#pokemon-list');
         newPokemon.forEach(name => {
           list.appendChild(ons.createElement(`
-            <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="changePage('pokeStats.html',pokeUrl)">
+            <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="changePage('pokeStats.html', ${nextPokenumber} )">
               ${name}
 
             </ons-list-item>
