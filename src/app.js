@@ -65,11 +65,11 @@ document.addEventListener('init', (e) => {
             const stats = document.querySelector('#pokemon-stats');
             const pokeName = document.getElementById('pokeName');
             pokeName.textContent=jsonResponse.name;
-            
+
             
               stats.appendChild(ons.createElement(`
                 <ons-list-item>
-                jsonResponse.sprites
+                ${jsonResponse.sprites}
                 </ons-list-item>
               `));
               
