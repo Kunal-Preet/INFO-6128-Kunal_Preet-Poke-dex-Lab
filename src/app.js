@@ -1,7 +1,11 @@
 const savePokemon = (pokenumber, button) => {
     addPokemonToGrid(pokenumber);
     button.parentNode.parentNode.hideExpansion();
+    //elements.pokeStats.addEventListener('click', () => changePage('pokeStats.html'));
   };
+let elements = {
+    pokeStats: null
+}
   
   document.addEventListener('init', ({ target }) => {
     if (target.matches('#pokeball')) {
@@ -19,13 +23,14 @@ const savePokemon = (pokenumber, button) => {
         const list = document.querySelector('#pokemon-list');
         newPokemon.forEach(name => {
           list.appendChild(ons.createElement(`
-            <ons-list-item modifier="chevron" tappable>
+            <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="fn.load('pokeStats.html')" >
               ${nextPokenumber} ${name}
               <div class="expandable-content">
                 <ons-button onclick="savePokemon(${nextPokenumber}, this)">Save</ons-button>
               </div>
             </ons-list-item>
           `));
+       
           nextPokenumber++;
         });
   
