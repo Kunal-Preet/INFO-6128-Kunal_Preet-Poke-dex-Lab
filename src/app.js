@@ -17,7 +17,7 @@ const changePage = (page, data) => {
 document.addEventListener('init', (e) => {
         if (e.target.id === 'pokeball') {
       let url = 'https://pokeapi.co/api/v2/pokemon?limit=100';
-      let nextPokenumber = 1; // use to keep track of the Pokémon numbers
+      let pokeNumber = 1; // use to keep track of the Pokémon numbers
       elements = {
         navigator: document.querySelector('#navigator')}
       const get = async () => {
@@ -31,13 +31,13 @@ document.addEventListener('init', (e) => {
         const list = document.querySelector('#pokemon-list');
         newPokemon.forEach(name => {
           list.appendChild(ons.createElement(`
-            <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="changePage('pokeStats.html', ${nextPokenumber} )">
+            <ons-list-item modifier="chevron" tappable id="pokeStats" onclick="changePage('pokeStats.html', ${pokeNumber} )">
               ${name}
 
             </ons-list-item>
           `));
           
-          nextPokenumber++;
+          pokeNumber++;
         });
   
         url = json.next;
@@ -50,7 +50,7 @@ document.addEventListener('init', (e) => {
       get();
     }
     if (e.target.id === "stats") {
-        let url = 'https://pokeapi.co/api/v2/pokemon/1/';
+        let url = "https://pokeapi.co/api/v2/pokemon/"+pokeUrl+"/";
 
         const get = async () => {
             const response = await fetch(url);
