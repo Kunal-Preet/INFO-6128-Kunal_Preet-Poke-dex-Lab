@@ -5,15 +5,14 @@ const savePokemon = (pokenumber, button) => {
   };
 
 const redirect = () =>{
-    window.location("pokeStats.html");
+   // window.location("pokeStats.html");
 }  
 let elements = {
     pokeStats: null
 }
-  
-  document.addEventListener('init', ({ target }) => {
-    if (target.matches('#pokeball')) {
-  
+
+document.addEventListener('init', (e) => {
+        if (e.target.id === 'pokeball') {
       let url = 'https://pokeapi.co/api/v2/pokemon?limit=100';
       let nextPokenumber = 1; // use to keep track of the Pokémon numbers
   
@@ -27,7 +26,7 @@ let elements = {
         const list = document.querySelector('#pokemon-list');
         newPokemon.forEach(name => {
           list.appendChild(ons.createElement(`
-            <ons-list-item modifier="chevron" tappable id="pokeStats" onClick = "redirect()" >
+            <ons-list-item modifier="chevron" tappable id="pokeStats" >
               ${nextPokenumber} ${name}
               <div class="expandable-content">
                 <ons-button onclick="savePokemon(${nextPokenumber}, this)">Save</ons-button>
